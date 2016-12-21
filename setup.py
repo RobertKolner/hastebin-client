@@ -5,9 +5,11 @@ setup(
     name='hastebin-client',
     version='0.1',
     description='Command line tool for uploading files to hastebin.com',
+    keywords=['hastebin', 'haste', 'client'],
 
     # Origin
-    url='http://github.com/RobertKolner/hastebin-client',
+    url='https://github.com/RobertKolner/hastebin-client',
+    download_url='https://github.com/RobertKolner/hastebin-client/releases/tag/0.1',
     author='Robert Kolner',
     author_email='robert.kolner@gmail.com',
     license='MIT',
