@@ -1,0 +1,10 @@
+__pycache__/
+
+/.cache/
+/.eggs/
+/.tox/
+/build/
+/hastebin_client.egg-info/
+/venv/
+
+/.coverage

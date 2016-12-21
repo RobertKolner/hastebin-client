@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+import argparse
+import logging
+import sys
+from hastebin_client.utils import create_url, read_data, upload
+
+
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
+
+
+def parse_args():
+    cli = argparse.ArgumentParser()
+    cli.add_argument('filename', nargs='?')
+    return cli.parse_args()
+
+
+def run():
+    args = parse_args()
+    data = read_data(filename=args.filename)
+    response = upload(data)
+
+    if response is not None:
+        result = create_url(response['key'])
+    else:
+        result = ''
+
+    # Return the result to the user
+    sys.stdout.write(result)
+
+
+if __name__ == "__main__":
+    run()
