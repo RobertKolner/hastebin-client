@@ -34,8 +34,7 @@ def test_upload():
     with mock.patch('requests.post') as post_function:
         post_function.return_value.json.return_value = {'key': 'lonely-ranger'}
         result = upload('test data')
-    assert isinstance(result, dict)
-    assert result.get('key') == 'lonely-ranger'
+    assert result == 'lonely-ranger'
 
 
 def test_upload_timeout():
@@ -50,3 +49,11 @@ def test_upload_error():
         post_function.return_value.json.side_effect = ValueError('Invalid JSON')
         result = upload('test data')
     assert result is None
+
+
+def test_upload_too_big():
+    with mock.patch('requests.post') as post_function:
+        post_function.return_value.json.return_value = {'message': 'Document exceeds maximum length.'}
+        result = upload('test data')
+    assert result is None
+

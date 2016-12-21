@@ -5,7 +5,7 @@ import sys
 from hastebin_client.utils import create_url, read_data, upload
 
 
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.WARNING)
 
 
 def parse_args():
@@ -20,7 +20,7 @@ def run():
     response = upload(data)
 
     if response is not None:
-        result = create_url(response['key'])
+        result = create_url(response)
     else:
         result = ''
 
