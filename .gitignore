@@ -1,10 +1,11 @@
 __pycache__/
 
+/*.egg-info/
 /.cache/
 /.eggs/
 /.tox/
 /build/
-/hastebin_client.egg-info/
+/dist/
 /venv/
 
 /.coverage
