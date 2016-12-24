@@ -25,7 +25,7 @@ def run():
         result = ''
 
     # Return the result to the user
-    sys.stdout.write(result)
+    print(result)
 
 
 if __name__ == "__main__":
