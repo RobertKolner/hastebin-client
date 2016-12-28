@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     # Metadata
     name='hastebin-client',
-    version='0.1.1',
+    version='0.1.2',
     description='Command line tool for uploading files to hastebin.com',
     keywords=['hastebin', 'haste', 'client'],
 
