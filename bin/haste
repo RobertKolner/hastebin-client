@@ -5,7 +5,7 @@ import sys
 from hastebin_client.utils import create_url, read_data, upload
 
 
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.WARNING)
+logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.WARNING)
 
 
 def parse_args():

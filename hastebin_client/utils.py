@@ -29,7 +29,8 @@ def upload(data):
     except ValueError as e:
         logging.error("Couldn't parse response from hastebin:\n{}".format(response.content.decode()))
     except KeyError:
-        logging.error("Failed! Response from hastebin:\n{}".format(response.content.decode()))
+        message = response.json().get('message', response.content.decode())
+        logging.error("Failed! Response from hastebin:\n{}".format(message))
 
 
 def create_url(haste_key):
